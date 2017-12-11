@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue js</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+<p>{{message}}</p>
+
+<input v-model="message1" placeholder="add a name "> welcome to the vue js Mr.
+<strong>{{ message1 }} </strong>
+</div>
+<div id="new">
+
+        <span>Multiline message is:</span>
+        <p style="white-space: pre-line;">{{ welcome }}</p>
+        <br>
+        <textarea v-model="welcome" placeholder="add multiple lines"></textarea>
+    </div>
+    <div id="list_company">
+        <ul>
+            <li v-for="name in names">{{ name }}</li>
+        </ul>
+
+        <input type="text" v-model="newName">
+
+        <input type="button" value="Submit" v-on:click="addName" />
+    </div>
+</body>
+<script src="js/app.js"></script>
+
+</html>
