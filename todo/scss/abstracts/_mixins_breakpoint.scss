@@ -1,0 +1,54 @@
+$xs-min      : 0em;
+$xs-max      : 33.9em; // 542.4px
+$sm-min      : 34em; // 544px
+$sm-max      : 47.9em; //766.4px
+$md-min      : 48em; //768px
+$md-max      : 61.9em; //990.4px
+$lg-min      : 62em; //992px
+$lg-max      : 74.9em; //1198.4px
+$xl-min      : 75em; //1200px
+
+// @include breakpoint-up(sm) { }
+@mixin breakpoint-up($point) {
+  @if $point == sm {
+    @media (min-width: $sm-min) { @content; }
+  }
+  @if $point == md {
+    @media (min-width: $md-min) { @content; }
+  }
+  @if $point == lg {
+    @media (min-width: $lg-min) { @content; }
+  }
+  @if $point == xl {
+    @media (min-width: $xl-min) { @content; }
+  }
+}
+
+// down breakpoint
+@mixin breakpoint-down($point) {
+  @if $point == xs {
+    @media (max-width: $xs-max) { @content; }
+  }
+  @if $point == sm {
+    @media (max-width: $sm-max) { @content; }
+  }
+  @if $point == md {
+    @media (max-width: $md-max) { @content; }
+  }
+  @if $point == lg {
+    @media (max-width: $lg-max) { @content; }
+  }
+}
+
+// min - max breakpoint
+@mixin breakpoint($min, $max) {
+  @if $min == xs and $max == sm {
+    @media (min-width: $xs-min) and (max-width: $xs-max){ @content; }
+  }
+  @if $min == sm and $max == md {
+    @media (min-width: $sm-min) and (max-width: $md-max){ @content; }
+  }
+  @if $min == md and $max == lg {
+    @media (min-width: $md-min) and (max-width: $lg-max){ @content; }
+  }
+}

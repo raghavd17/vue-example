@@ -1,0 +1,27 @@
+.todo {
+  width: 500px;
+  margin: 0 auto;
+  ul {
+    margin:0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+  li {
+    padding-left: 25px;
+    margin-bottom: 5px;
+  }
+
+  &.completed {
+    color: #ddd;
+    position: relative;
+
+    &::before {
+      content: '\2611';
+      position: absolute;
+      display: inline-block;
+      margin-left: -20px;
+      top: -2px;
+    }
+  }
+}

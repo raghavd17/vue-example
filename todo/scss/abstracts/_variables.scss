@@ -1,0 +1,53 @@
+// google font for body
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+
+
+// set the initial em base
+$em-base              : 14px;
+
+// colors
+$white                : #fff;
+$black                : #000;
+$gray                 : #55595c;
+$gray-dark            : #373a3c;
+$gray-light           : #b3b3b3;
+$gray-lighter         : #dbdbdb;
+$gray-lightest        : #f4f4f4;
+$logo-color           : $gray;
+$logo-color-hover     : $gray-light;
+$link-color           : rgb(234,221,6);
+$highlight            : rgb(234, 221, 6);
+$body-bg              : #f9f7f6;
+
+
+$font-family-body     : 'Nunito Sans', sans-serif;
+
+$font-family-heading        : 'Open Sans',;
+
+
+// typography
+$line-height                : $em-base;
+$line-height-reset          : 1;
+$font-size-base             : $em-base;
+
+
+// define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// breakpoints
+$xs-min: 0;
+$xs-max: 33.9em;
+$sm-min: 34em;
+$sm-max: 47.9em;
+$md-min: 48em;
+$md-max: 61.9em;
+$lg-min: 62em;
+$lg-max: 74.9em;
+$xl-min: 75em;
+// grid containers
+// define the maximum width of the container for different screen sizes
+$container-max-widths: ( sm: 480px, md: 760px, lg: 1000px, xl: 1140px);
+
+// z-index
+// usage - z-index: z-index(default);
+$z-index: ( default :1, modal :999, navbar-toggle :10, navbar :9, cart-summary: 2);

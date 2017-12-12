@@ -1,0 +1,5 @@
+/*! todo - v1.0.0 - 2017-12-12
+* index.html
+* Copyright (c) 2017 ; Licensed  */
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans");.todo{width:500px;margin:0 auto}.todo ul{margin:0;padding:0;list-style:none;position:relative}.todo li{padding-left:25px;margin-bottom:5px}.todo.completed{color:#ddd;position:relative}.todo.completed::before{content:'\2611';position:absolute;display:inline-block;margin-left:-20px;top:-2px}.m-a{margin:0 auto;text-align:center}
+/*# sourceMappingURL=main.min.css.map */

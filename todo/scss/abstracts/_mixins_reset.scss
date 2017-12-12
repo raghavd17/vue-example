@@ -1,0 +1,60 @@
+
+// resetting padding
+//.classname { @include reset-padding(left);}
+@mixin reset-padding($val) {
+    @if $val==left {
+        padding-left: 0px;
+    }
+    @if $val==right {
+        padding-right: 0px;
+    }
+    @if $val==top {
+        padding-top: 0px;
+    }
+    @if $val==bottom {
+        padding-bottom: 0px;
+    }
+    @if $val==all {
+        padding: 0px;
+    }
+}
+
+// resetting margin
+//.classname { @include reset-margin(left);}
+@mixin reset-margin($val) {
+    @if $val==left {
+        margin-left: 0px;
+    }
+    @if $val==right {
+        margin-right: 0px;
+    }
+    @if $val==top {
+        margin-top: 0px;
+    }
+    @if $val==bottom {
+        margin-bottom: 0px;
+    }
+    @if $val==all {
+        margin: 0px;
+    }
+}
+
+// resetting border
+//.classname { @include reset-border(left);}
+@mixin reset-border($val) {
+    @if $val==left {
+        border-left: 0px;
+    }
+    @if $val==right {
+        border-right: 0px;
+    }
+    @if $val==top {
+        border-top: 0px;
+    }
+    @if $val==bottom {
+        border-bottom: 0px;
+    }
+    @if $val==all {
+        border: 0px;
+    }
+}
