@@ -1,4 +1,6 @@
-.m-a {
-  margin: 0 auto;
-  text-align:center;
+%container {
+    &_small {
+        margin: 0 auto;
+        max-width: 400px;
+    }
 }

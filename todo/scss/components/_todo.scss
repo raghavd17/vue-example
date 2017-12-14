@@ -1,27 +1,52 @@
-.todo {
-  width: 500px;
-  margin: 0 auto;
-  ul {
-    margin:0;
+.todo-list {
+    margin: 0;
     padding: 0;
     list-style: none;
     position: relative;
-  }
-  li {
-    padding-left: 25px;
-    margin-bottom: 5px;
-  }
-
-  &.completed {
-    color: #ddd;
-    position: relative;
-
-    &::before {
-      content: '\2611';
-      position: absolute;
-      display: inline-block;
-      margin-left: -20px;
-      top: -2px;
+    display: grid;
+    grid-gap: 0.5em;
+    &__items {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-gap: 0.1em;
     }
-  }
+    &__checkbox {
+        padding: 3px;
+    }
+    //
+    &__name {
+        &--input_text {
+            padding: 3px;
+            width: 100%;
+            background: transparent;
+            -webkit-appearance: none;
+            border: none;
+            outline: none;
+            &:focus {
+                background: rgba(255, 255, 255, 0.5);
+            }
+            &.done {
+                text-decoration: line-through;
+            }
+        }
+        &.done {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.todo_section {
+    @extend %container_small;
+    padding: 0.5em;
+    display: grid;
+    grid-template-rows: auto auto;
+    // justify-items: center;
+    grid-gap: 0.5em;
+    background: red;
+}
+
+.todo_controls {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    grid-gap: 0.5em;
 }
