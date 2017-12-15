@@ -1,40 +1,48 @@
-var list = new Vue({
-  el: '#app',
-  data: {
-    new_todo: '',
-    todos: JSON.parse(localStorage.getItem('todos'))
-  },
-  methods: {
-    add_newtask: function() {
-      var new_todo = this.new_todo
-      if (!new_todo == '' || !new_todo == null) {
-        this.todos.push({
-          task: new_todo,
-          completed: false
-        })
-        localStorage.setItem('todos', JSON.stringify(this.todos));
-        this.new_todo = ''
-        return
-      } else {
-        alert('add a task');
-      }
+new Vue({
+    el: '#app',
+    data: {
+        count: 0,
+        new_task: '',
+        tasks: [],
+        taskupdate: []
     },
-    clear_taskentry: function() {
-        this.new_todo = ''
-        alert('hello');
+    methods: {
+        addTask: function() {
+            if (!(this.new_task) == ' ' || !(this.new_task) == null) {
+                this.tasks.push({
+                    id: this.count++,
+                    name: this.new_task,
+                    done: false
+                });
+                this.new_task = '';
+            } else {
+              alert('add a task name');
+            }
+        },
+        deleteTask: function(task) {
+            // console.log(task);
+            this.tasks.splice(this.tasks.indexOf(task), 1)
+        }
     },
-    task_done: function(ts_status) {
+    mounted() {
+        //console.log('App mounted!');
+        if (localStorage.getItem('tasks'))
+            this.tasks = JSON.parse(localStorage.getItem('tasks'));
 
-      console.log(' before' + ts_status.completed);
-      this.ts_status = true;
-      console.log('After' + ts_status.completed);
-    }
+        // taskupdate: {
+        //     JSON.parse(localStorage.getItem('tasks')).reverse();
+        //     console.log(taskupdate)
+        // }
 
-  }
-})
 
-//
-// localStorage.setItem('todos', JSON.stringify(todos));
-//
-// // Retrieve the object from storage
-// var retrievedObject = localStorage.getItem('todos');
+    },
+    watch: {
+        tasks: {
+            handler() {
+                // console.log('Todos changed!');
+                localStorage.setItem('tasks', JSON.stringify(this.tasks));
+            },
+            deep: true,
+        }
+    },
+});

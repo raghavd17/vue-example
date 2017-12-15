@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Simple to do wih vue js</title>
-        <script src="https://unpkg.com/vue"></script>
-        <link rel="stylesheet" href="css/style.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Simple to do wih vue js</title>
+      <script src="https://unpkg.com/vue"></script>
+      <link rel="stylesheet" href="css/style.min.css">
     </head>
   </head>
+
   <body>
-        <div id="app">
-            <ul  class="todo">
-                <li v-for="todo in todos" v-bind:class="{completed : todo.completed}" v-on:click.prevent="task_done(todo)">{{ todo.task }}</li>
-            </ul>
+    <div id="app">
+      <section class="todo_section">
+        <h1>To do list </h1>
+        <form class="todo_controls" v-on:submit.prevent="addTask()">
+          <input type="text" name="" value="" v-model="new_task">
+          <input type="submit" name="Add Task" value="Add Task" />
+        </form>
+        <ul class="todo-list">
+          <li v-for="task in tasks" class="todo-list__items">
+            <span class="todo-list__checkbox">
+              <input type="checkbox" v-model="task.done" class="" />
+            </span>
 
-            <input type="text" v-model="new_todo" v-on:keyup.enter="add_newtask()" v-on:keyup.esc="clear_taskentry()">
+            <span class="todo-list__name">
+              <input class="todo-list__name--input_text" v-bind:class="{done: task.done}" type="text" v-model="task.name">
+              <!-- {{ task.id }}{{ task.name }} #}-->
+            </span>
+            <span>
+              <input type="button" value="delete" v-on:click="deleteTask(task)" />
+            </span>
+          </li>
+        </ul>
 
-            <input type="button" value="Submit" v-on:click="add_newtask()" />
-        </div>
+        <h2>Newly add task name is</h2>
+        {{taskupdate}}
+        <ul>
+          <li v-for="task in taskupdate">
+          {{taskupdate}}
+          </li>
+        </ul>
+
+      </section>
+
+      <!-- <input type="text" v-model="new_todo" v-on:keyup.enter="add_newtask()"> -->
+
+      <!-- <input type="button" value="Submit" v-on:click="add_newtask()" /> -->
+    </div>
 
     <script src="js/app.js"></script>
   </body>
+
 </html>
