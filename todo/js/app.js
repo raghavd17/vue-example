@@ -29,10 +29,10 @@ new Vue({
         if (localStorage.getItem('tasks'))
             this.tasks = JSON.parse(localStorage.getItem('tasks'));
 
-        taskupdate: {
-            JSON.parse(localStorage.getItem('tasks')).reverse();
-            console.log(taskupdate)
-        }
+        // taskupdate: {
+        //     JSON.parse(localStorage.getItem('tasks')).reverse();
+        //     console.log(taskupdate)
+        // }
 
 
     },
